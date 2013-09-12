@@ -1,25 +1,43 @@
-<!-- application/layouts/scripts/layout.phtml -->
-<?php echo $this->doctype() ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Zend Framework Quickstart Application</title>
-  <?php echo $this->headLink()->appendStylesheet('/css/global.css') ?>
-</head>
-<body>
-<div id="header" style="background-color: #EEEEEE; height: 30px;">
-    <div id="header-logo" style="float: left">
-        <b>ZF Quickstart Application</b>
-    </div>
-    <div id="header-navigation" style="float: right">
-        <a href="<?php echo $this->url(
-            array('controller'=>'guestbook'),
-            'default',
-            true) ?>">Guestbook</a>
-    </div>
-</div>
- 
-<?php echo $this->layout()->content ?>
- 
-</body>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ZendFramework Sample Application</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="../assets/css/bootstrap.css" rel="stylesheet">
+        <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="../assets/css/styles.css" rel="stylesheet">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="../assets/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="brand" href="#">ZF1 App</a>
+                        <ul class="nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <?php echo $this->layout()->content; ?>
+            <hr>
+            <footer>
+                <p>Copyright 2013</p>
+            </footer>
+        </div>
+        <script src="../assets/js/jquery.js"></script>
+        <script src="../assets/js/bootstrap.js"></script>
+    </body>
 </html>
