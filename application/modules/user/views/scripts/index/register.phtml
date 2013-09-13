@@ -1,4 +1,6 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Index</b> and script/action name <b>register</b></p>
+<div id="view-content" class="well">
+    <?php
+    $this->form->setAction($this->url());
+    echo $this->form;
+    ?>
 </div>

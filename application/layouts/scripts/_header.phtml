@@ -13,10 +13,10 @@
     <div class="navbar">
         <div class="navbar-inner">
             <div class="container">
-                <a class="brand" href="#">ZF1 App</a>
+                <a class="brand" href="<?php echo $this->baseUrl() ?>">ZF1 App</a>
                 <ul class="nav">
-                    <li><a href="#">User List</a></li>
-                    <li><a href="#">User Registration</a></li>
+                    <li><a href="<?php echo $this->baseurl('users'); ?>">Users</a></li>
+                    <li><a href="<?php echo $this->baseurl('register'); ?>">User Registration</a></li>
                 </ul>
             </div>
         </div>
