@@ -1,4 +1,44 @@
-<br /><br />
 <div id="view-content">
-	<p>View script for controller <b>Index</b> and script/action name <b>index</b></p>
+    <a class="btn btn-primary btn-large pull-right" href="<?php echo $this->baseUrl('register');?>">Add User</a>
+    <br/>
+    <?php if (count($this->users)) : ?>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Phone</th> 
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($this->users as $user) : ?>
+                    <tr>
+                        <td><?php echo $user->id; ?></td>
+                        <td><?php echo $this->escape($user->email); ?></td>
+                        <td><?php echo $this->escape($user->firstname); ?></td>
+                        <td><?php echo $this->escape($user->lastname); ?></td>
+                        <td><?php echo $this->escape($user->address); ?></td>
+                        <td><?php echo $this->escape($user->phone); ?></td>
+                        <td><a href="<?php echo $this->url(array('module' => 'user', 'controller' => 'index', 'action' => 'edit', 'id' => $user->id)) ?>">Edit</a></td>
+                        <td><a href="<?php echo $this->url(array('module' => 'user', 'controller' => 'index', 'action' => 'delete', 'id' => $user->id)) ?>" onClick="if (confirm('Are you sure want to delete the user?') == false) {
+                                    return false
+                                }
+                                ;">Delete</a></td>
+                    <tr> 
+                    <?php endforeach; ?>
+            </tbody>
+        </table>
+        <?php
+        echo $this->paginationControl($this->users, 'Sliding', 'common/_paginationControl.phtml');
+        ?>
+    <?php else : ?>
+        <div class="alert alert-notice">
+            <p>No, records found.</p>
+        </div>
+    <?php endif; ?>
 </div>
