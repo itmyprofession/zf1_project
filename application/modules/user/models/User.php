@@ -63,6 +63,7 @@ class User_Model_User
     public function setEmail($email)
     {
         $this->_email = $email;
+        return $this;
     }
 
     public function getFirstname()
@@ -73,6 +74,7 @@ class User_Model_User
     public function setFirstname($firstname)
     {
         $this->_firstname = $firstname;
+        return $this;
     }
 
     public function getLastname()
@@ -83,6 +85,7 @@ class User_Model_User
     public function setLastname($lastname)
     {
         $this->_lastname = $lastname;
+        return $this;
     }
 
     public function getAddress()
@@ -93,6 +96,7 @@ class User_Model_User
     public function setAddress($address)
     {
         $this->_address = $address;
+        return $this;
     }
 
     public function getPhone()
@@ -103,6 +107,7 @@ class User_Model_User
     public function setPhone($phone)
     {
         $this->_phone = $phone;
+        return $this;
     }
 
     public function getCountry()
@@ -113,6 +118,7 @@ class User_Model_User
     public function setCountry($country)
     {
         $this->_country = $country;
+        return $this;
     }
 
     public function getId()
@@ -123,6 +129,7 @@ class User_Model_User
     public function setId($id)
     {
         $this->_id = $id;
+        return $this;
     }
 
 }

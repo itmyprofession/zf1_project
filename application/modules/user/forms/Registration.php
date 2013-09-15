@@ -21,6 +21,10 @@ class User_Form_Registration extends Zend_Form
         $this->setMethod('post');
         $this->setAttrib('class', 'form-horizontal');
 
+        $this->addElement('hidden', 'id', array(
+            'filters' => array('Int'),
+        ));
+
         $this->addElement('text', 'email', array(
             'decorators' => $this->elementDecorators,
             'label' => 'Email:',
