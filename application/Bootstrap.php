@@ -17,6 +17,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $this->bootstrap('view');
         $view = $this->getResource('view');
         $view->doctype('XHTML1_STRICT');
+        $view->headTitle('ZF1 Sample Application');
+        $view->headTitle()->setSeparator(' :: ');
     }
 
     /**
@@ -34,7 +36,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             'controller' => 'index',
             'module' => 'user'
         )));
-        
+
         // Show user registration
         $front->getRouter()->addRoute('register', new Zend_Controller_Router_Route(
                 'register', array(
@@ -42,6 +44,19 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             'controller' => 'index',
             'module' => 'user'
         )));
+    }
+
+    protected function _initLoader()
+    {
+        $loader = Zend_Loader_Autoloader::getInstance();
+        $loader->registerNamespace('Noumenal_');
+    }
+
+    protected function _initHelper()
+    {
+        $this->bootstrap('view');
+        $view = $this->getResource('view');
+        $view->addHelperPath('Noumenal/View/Helper', 'Noumenal_View_Helper');
     }
 
 }
