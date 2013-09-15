@@ -1,0 +1,44 @@
+<?php
+/**
+ * Flash Message Partial Template
+ * 
+ * @category template
+ * @author  Santosh Moktan <itmyprofession@gmail.com>
+ * @copyright (c) 2013
+ */
+?>
+
+<?php
+$flashMessages = $this->getHelper('flashMessenger')->getFlashMessengerArray();
+if (count($flashMessages)):
+    foreach ($flashMessages as $value) :
+        list($key, $message) = each($value);
+        ?>
+        <?php if ($key == 'success') : ?>
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Success!</strong> <?php echo $message; ?>
+            </div>
+        <?php elseif ($key == 'information') : ?>
+            <div class="alert alert-info">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Information!</strong> <?php echo $message; ?>
+            </div>
+        <?php elseif ($key == 'notice') : ?>
+            <div class="alert alert-notice">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Notice!</strong> <?php echo $message; ?>
+            </div>
+        <?php elseif ($key == 'warning') : ?>
+            <div class="alert">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Warning!</strong> <?php echo $message; ?>
+            </div>
+        <?php elseif ($key == 'error') : ?>
+            <div class="alert alert-error">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>Error!</strong> <?php echo $message; ?>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
+<?php endif; ?>
