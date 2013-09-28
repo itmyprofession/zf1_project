@@ -27,11 +27,12 @@
     <body>
         <?php echo $this->render('_header.phtml'); ?>
         <div class="container">
-            <?php echo $this->render('_flashmessenger.phtml');?>
-            
+            <?php echo $this->render('_flashmessenger.phtml'); ?>
+
             <?php echo $this->layout()->content; ?>
             <hr/>
             <?php echo $this->render('_footer.phtml'); ?>
         </div>
+        <?php echo $this->render('profiler.phtml') ?>
     </body>
 </html>
